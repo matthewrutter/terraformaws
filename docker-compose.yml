@@ -1,0 +1,14 @@
+# https://www.bornfight.com/blog/blog-lamp-docker-setup-with-php-8-and-mariadb-for-symfony-projects/
+
+version: "3"
+
+services:
+    www:
+        build:
+            context: .
+            args:
+              ALPINE_IMAGE: ${ALPINE_IMAGE}
+              TERRAFORM_VERSION: ${TERRAFORM_VERSION}
+              container_name: tfbuilder
+
+        command: ./run.sh
