@@ -31,7 +31,7 @@ RUN terraform --version
 
 # Copy the file that will setup server configuration and the Terraform configuration file
 COPY ./run.sh /run.sh
-COPY ./main.tf /main.tf
+COPY ./terraform /terraform
 
 # Set entrypoint to bash
 ENTRYPOINT ["/bin/bash"]

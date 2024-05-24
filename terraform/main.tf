@@ -7,15 +7,7 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = "us-west-2"
-}
-
 resource "aws_s3_bucket" "example" {
-  bucket = "my-unique-tf-test-bucket98765asdfasdf123"
+  bucket = "my-unique-tf-test-bucket98765asdfasdf12"
   # You can omit the ACL if it's not supported
-}
-
-output "bucket_name" {
-  value = aws_s3_bucket.example.bucket
 }

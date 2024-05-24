@@ -1,14 +1,15 @@
-# https://www.bornfight.com/blog/blog-lamp-docker-setup-with-php-8-and-mariadb-for-symfony-projects/
-
 version: "3"
 
 services:
-    www:
+    terraform:
         build:
             context: .
             args:
               ALPINE_IMAGE: ${ALPINE_IMAGE}
               TERRAFORM_VERSION: ${TERRAFORM_VERSION}
               container_name: tfbuilder
-
+        environment:
+            - TF_VAR_aws_access_key=${AWS_ACCESS_KEY_ID}
+            - TF_VAR_aws_secret_key=${AWS_SECRET_ACCESS_KEY}
+            - TF_VAR_aws_default_region=${AWS_DEFAULT_REGION}
         command: ./run.sh
